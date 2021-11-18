@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "124871149979",
+    "project_id": "appm-286ff",
+    "storage_bucket": "appm-286ff.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:124871149979:android:6d36acfad120e028ebf93e",
+        "android_client_info": {
+          "package_name": "com.example.kotlin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "124871149979-adsmtuecbmljceijbp4ia8lr9eek3tut.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAbbnAZ9CUKF4s2UYQvbyFLiz_kq7Rkqhw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "124871149979-adsmtuecbmljceijbp4ia8lr9eek3tut.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
