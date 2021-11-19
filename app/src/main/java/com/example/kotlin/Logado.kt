@@ -19,7 +19,7 @@ class Logado : AppCompatActivity() {
         val buttonSair = findViewById<Button>(R.id.buttonDeslogar)
         val textUser = findViewById<TextView>(R.id.textView_usuer)
         val textSenha = findViewById<TextView>(R.id.textView_senha)
-
+        //testar comit delete
 
         val textSenha2 = intent.getStringExtra("senha" )
         textSenha.setText(intent.getStringExtra("senha"))
