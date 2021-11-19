@@ -19,8 +19,7 @@ class Logado : AppCompatActivity() {
         val buttonSair = findViewById<Button>(R.id.buttonDeslogar)
         val textUser = findViewById<TextView>(R.id.textView_usuer)
         val textSenha = findViewById<TextView>(R.id.textView_senha)
-
-
+        //testando comit git
         val textSenha2 = intent.getStringExtra("senha" )
         textSenha.setText(intent.getStringExtra("senha"))
         //val toast = Toast.makeText(applicationContext,"senha"+ textSenha2,Toast.LENGTH_SHORT)
