@@ -10,10 +10,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Kotlin">
         <activity
-            android:name=".Logado"
+            android:name=".Signup"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
+            android:exported="false"
+            android:label="@string/title_activity_home"
+            android:theme="@style/Theme.Kotlin.NoActionBar" />
+        <activity
+            android:name=".Logado"
+            android:exported="false" />
+        <activity
+            android:name=".Home"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

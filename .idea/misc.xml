@@ -3,6 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Eduardo Veiga/AndroidStudioProjects/Kotlin/app/src/main/res/drawable/btn_background.xml" value="0.2265" />
+        <entry key="..\:/Users/Eduardo Veiga/AndroidStudioProjects/Kotlin/app/src/main/res/drawable/logo_img_background.xml" value="0.2265" />
+        <entry key="..\:/Users/Eduardo Veiga/AndroidStudioProjects/Kotlin/app/src/main/res/layout/activity_home.xml" value="0.264" />
+        <entry key="..\:/Users/Eduardo Veiga/AndroidStudioProjects/Kotlin/app/src/main/res/layout/activity_logado.xml" value="0.264" />
+        <entry key="..\:/Users/Eduardo Veiga/AndroidStudioProjects/Kotlin/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/Users/Eduardo Veiga/AndroidStudioProjects/Kotlin/app/src/main/res/layout/activity_signup.xml" value="0.264" />
+        <entry key="..\:/Users/Eduardo Veiga/AndroidStudioProjects/Kotlin/app/src/main/res/mipmap-anydpi-v26/logo_img.xml" value="0.127" />
         <entry key="..\:/Users/Eduardo/AndroidStudioProjects/Kotlin/app/src/main/res/drawable/ic_logon.xml" value="0.290625" />
         <entry key="..\:/Users/Eduardo/AndroidStudioProjects/Kotlin/app/src/main/res/layout/activity_logado.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/Eduardo/AndroidStudioProjects/Kotlin/app/src/main/res/layout/activity_main.xml" value="0.264" />

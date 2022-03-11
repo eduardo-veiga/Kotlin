@@ -1,8 +1,6 @@
 package com.example.kotlin
 
-import android.content.ContentValues.TAG
 import android.content.Intent
-import android.media.Image
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -23,11 +21,11 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        var editText = findViewById<EditText>(R.id.textLogon)
+        var editText = findViewById<EditText>(R.id.text_email)
         //editText.setText("usuario@usuario.com")
         var editSenha = findViewById<EditText>(R.id.textSenha)
         MeuLogin()
-        NewCadastro()
+        sendPasswordReset()
 
         auth = Firebase.auth
         //createAccount(editText.text.toString(),editSenha.text.toString())
@@ -37,7 +35,7 @@ class MainActivity : AppCompatActivity() {
     public fun MeuLogin() {
         var button = findViewById<Button>(R.id.buttonLogon)
 
-        var editText = findViewById<EditText>(R.id.textLogon)
+        var editText = findViewById<EditText>(R.id.text_email)
         //editText.setText("usuario@usuario.com")
         var editSenha = findViewById<EditText>(R.id.textSenha)
 
@@ -59,6 +57,7 @@ class MainActivity : AppCompatActivity() {
                         intent.putExtra("user", editText.text.toString())
                         intent.putExtra("senha",editSenha.text.toString())
                         startActivity(intent).apply {  }
+                        finish()
                     } else {
                         // If sign in fails, display a message to the user.
                         Log.w(TAG, "signInWithEmail:failure", task.exception)
@@ -75,47 +74,6 @@ class MainActivity : AppCompatActivity() {
         })
 
     }
-
-    public fun NewCadastro(){
-
-        var buttoncad = findViewById<Button>(R.id.buttonCreate)
-
-        var editText = findViewById<EditText>(R.id.textLogon)
-        //editText.setText("usuario@usuario.com")
-        var editSenha = findViewById<EditText>(R.id.textSenha)
-        buttoncad.setOnClickListener(View.OnClickListener {
-            val intent = Intent(this,Logado::class.java)
-
-            auth.createUserWithEmailAndPassword(editText.text.toString(), editSenha.text.toString())
-                .addOnCompleteListener(this) { task ->
-                    if (task.isSuccessful) {
-                        // Sign in success, update UI with the signed-in user's information
-                        Log.d(TAG, "createUserWithEmail:success")
-                        val user = auth.currentUser
-                        updateUI(user)
-                        Toast.makeText(
-                            baseContext, "Create success.",
-                            Toast.LENGTH_SHORT
-
-                        ).show()
-                        intent.putExtra("user", editText.text.toString())
-                        intent.putExtra("senha",editSenha.text.toString())
-                        startActivity(intent).apply {  }
-                    } else {
-                        // If sign in fails, display a message to the user.
-                        Log.w(TAG, "createUserWithEmail:failure", task.exception)
-                        Toast.makeText(
-                            baseContext, "Authentication failed.",
-                            Toast.LENGTH_SHORT
-                        ).show()
-                        updateUI(null)
-                    }
-                }
-
-        })
-
-    }
-
 
     public override fun onStart() {
         super.onStart()
@@ -147,13 +105,24 @@ class MainActivity : AppCompatActivity() {
             }
     }
 
-    private fun sendEmailVerification() {
+    private fun sendPasswordReset() {
+
+        var btn_forgot = findViewById<Button>(R.id.buttonForgot)
+        var emailAddress = findViewById<EditText>(R.id.text_email)
         // [START send_email_verification]
-        val user = auth.currentUser!!
-        user.sendEmailVerification()
-            .addOnCompleteListener(this) { task ->
-                // Email Verification sent
+        btn_forgot.setOnClickListener(View.OnClickListener {
+            Firebase.auth.sendPasswordResetEmail(emailAddress.text.toString()).addOnCompleteListener(this) { task ->
+                if (task.isSuccessful){
+                    Toast.makeText(
+                        baseContext, "Email send",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                }
             }
+
+
+
+        })
 
     }
 
